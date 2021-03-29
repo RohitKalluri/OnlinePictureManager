@@ -1,0 +1,18 @@
+<header>
+    <p>Online Picture Management</p>
+  </header>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+        <b><p class="heading">SIGN UP   <i class="fa fa-user"></i></p></b>
+      </div>
+      <form signupForm="ngForm"> 
+      <br>
+                  First Name : <input type="text"  name="firstname" #firstname="ngModel" [(ngModel)]="u.firstName" required><br>
+                  Last Name : <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="u.lastName" required><br>
+                  User ID : <input type="text" name="uid" #uid="ngModel" [(ngModel)]="u.userId" required><br>
+                  Password : <input type="password" name="password" #password="ngModel" [(ngModel)]="u.password" required><br>
+                  <input type="submit" class="fadeIn fourth" value="Sign Up">
+              </form>
+      
+    </div>
