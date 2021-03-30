@@ -17,9 +17,9 @@ public class SignupController {
 	@Autowired
 	signuprepository repo;
 	
-	  @PostMapping(value="/load")
-	    public List<UserModel> saveUser(@RequestBody final UserModel user) {
+	  @PostMapping(value="/signup")
+	    public boolean saveUser(@RequestBody final UserModel user) {
 	      this.repo.save(user);
-	      return repo.findAll();
+	      return true;
 	    }
 }
