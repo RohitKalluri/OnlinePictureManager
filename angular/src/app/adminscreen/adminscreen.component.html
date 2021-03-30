@@ -1,6 +1,6 @@
 <mat-toolbar>
     
-    <span>Online Picture</span>
+    <span style="color: white;">Online Picture</span>
     <span class="example-spacer"></span>
     <div class="navlinks">
     <a ng-href="#">Home</a>
@@ -13,23 +13,8 @@
       <input matInput placeholder="Type here to search" id="search"  style="border: 1px solid blue;margin:10px;width:50%;height:40px;">
       <button mat-raised-button color="accent" id="searchbtn" style="width:10%;height:40px;">Search</button>
 </div>
-<div class="main">
-    <div class="rightside">
-        <br>
-        <label style="margin-left:90px;font-weight: bold;font-size:xx-large;padding:30px;margin-bottom:10px;">Edit Details</label><br>
-            <form>
-
-                 <input matInput placeholder="Enter name"><br>
-              <input matInput placeholder="Enter email"><br>
-              <input matInput placeholder="Enter mobile"><br>
-              <input matInput placeholder="Enter password"><br>
-              <button mat-raised-button id="updatebtn">Search</button>
-              <br>
-              <br>
-            </form>
-    </div>
-    <div class="details" style="float:left">
-        <div class="col-md-6">
+<div class="row">
+      <div class="column left">
             <table class="table table-striped">
             <thead>
             <tr>
@@ -48,9 +33,19 @@
                     <td><button class="editbtn"><mat-icon> border_color</mat-icon></button>&nbsp;<button class="deletebtn"><mat-icon>delete_outline</mat-icon></button></td>
                     </tr>
             </tbody>
-              </table>
-          
-            </div>
+            </table>
+      </div>
+      <div class="column right">
+        <label id="label">Edit Details</label><br>
+            <form>
+              <input matInput placeholder="Enter name"><br>
+              <input matInput placeholder="Enter email"><br>
+              <input matInput placeholder="Enter mobile"><br>
+              <input matInput placeholder="Enter password"><br>
+              <button mat-raised-button id="updatebtn">Search</button>
+              <br>
+              <br>
+            </form>
     </div>
 </div>
 
