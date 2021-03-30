@@ -1,0 +1,56 @@
+<mat-toolbar>
+    
+    <span>Online Picture</span>
+    <span class="example-spacer"></span>
+    <div class="navlinks">
+    <a ng-href="#">Home</a>
+    <a ng-href="#">Image</a>
+    <a ng-href="#">Logout</a>
+    </div>
+</mat-toolbar>
+
+<div class="search">
+      <input matInput placeholder="Type here to search" id="search"  style="border: 1px solid blue;margin:10px;width:50%;height:40px;">
+      <button mat-raised-button color="accent" id="searchbtn" style="width:10%;height:40px;">Search</button>
+</div>
+<div class="main">
+    <div class="rightside">
+        <br>
+        <label style="margin-left:90px;font-weight: bold;font-size:xx-large;padding:30px;margin-bottom:10px;">Edit Details</label><br>
+            <form>
+
+                 <input matInput placeholder="Enter name"><br>
+              <input matInput placeholder="Enter email"><br>
+              <input matInput placeholder="Enter mobile"><br>
+              <input matInput placeholder="Enter password"><br>
+              <button mat-raised-button id="updatebtn">Search</button>
+              <br>
+              <br>
+            </form>
+    </div>
+    <div class="details" style="float:left">
+        <div class="col-md-6">
+            <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>S No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+            <!--<tr *ngFor="let user of Users">-->
+                <tr>
+                    <td></td>
+                    <td>{{u.userName}}</td>
+                    <td>{{u.emailId}}</td>
+                    <td><button class="editbtn"><mat-icon> border_color</mat-icon></button>&nbsp;<button class="deletebtn"><mat-icon>delete_outline</mat-icon></button></td>
+                    </tr>
+            </tbody>
+              </table>
+          
+            </div>
+    </div>
+</div>
+
