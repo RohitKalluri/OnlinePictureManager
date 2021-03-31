@@ -13,14 +13,14 @@
   
       <!-- Login Form -->
       <form loginform="ngForm"> 
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username" [(ngModel)]="name">
+        <input type="password"  id="pass" class="fadeIn third" name="login" placeholder="password" [(ngModel)]="pass">
+        <input type="submit" class="fadeIn fourth" value="Log In" (click)="postData()">
       </form>
   
       <!-- Remind Passowrd -->
       <div id="formFooter">
-        new user?<a class="underlineHover" href="#">Register</a>
+        new user?<a class="underlineHover" routerLink="/signup">Register</a>
       </div>
   
     </div>

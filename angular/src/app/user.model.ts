@@ -5,4 +5,5 @@ export class User {
         public  userName : string,
         public mobileNumber : string,
     ){}
+    
 }

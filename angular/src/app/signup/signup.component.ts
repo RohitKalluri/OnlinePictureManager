@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user.model';
+import {HttpClient} from '@angular/common/http'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -7,10 +9,33 @@ import { User } from '../user.model';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
-  u = new User("","","","");
-  constructor() { }
+
+  email!:String
+  pass!:String
+  userName!:String
+  mobileNumber!:String
+
+
+  constructor(private route:Router,private httpClient:HttpClient) { }
 
   ngOnInit(): void {
   }
+
+  public postData(){
+    this.httpClient.post('http://localhost:8080/signup',{
+      email:this.email,
+      password:this.pass,
+      username:this.userName,
+      mobileNumber:this.mobileNumber,
+      active:1,
+      role:"user"
+    },{ observe: 'response' })
+    .subscribe((response) => {
+      if(response.body==true)
+        this.route.navigate(['home'])
+      else
+        alert('Invalid Credentials!! ')
+    })
+}
 
 }

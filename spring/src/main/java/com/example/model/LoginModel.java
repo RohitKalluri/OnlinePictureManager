@@ -3,6 +3,11 @@ package com.example.model;
 public class LoginModel {
 	private String email;
 	private String password;
+	public LoginModel(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
 	public String getEmail() {
 		return email;
 	}

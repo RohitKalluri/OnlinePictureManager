@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'app/user.model';
+import {HttpClient} from '@angular/common/http'
+import { Router } from '@angular/router';
+import { jsDocComment } from '@angular/compiler';
 
 @Component({
   selector: 'app-adminscreen',
@@ -7,32 +10,74 @@ import { User } from 'app/user.model';
   styleUrls: ['./adminscreen.component.css']
 })
 export class AdminscreenComponent implements OnInit {
-
-  constructor() { }
+  data:any=[];
+  username!:string; 
+  email!:string;
+  password!:string;
+  mobileNumber!:string;
+  role!:string;
+  constructor(private route:Router,private httpClient:HttpClient) { }
 
   ngOnInit(): void {
+    this.httpClient.get('http://localhost:8080/admin/',{observe:'response'})
+      .subscribe((response)=>{
+        this.data=response.body;
+        }
+      )
   }
 
   u=new User("abc@gmail.com","abc","abcdef","123456789");
-  //Users: User[];
-   
-  /*constructor(
-  private httpClientService: UserserviceService,
-  ) { }
 
-  ngOnInit() {
+  editbutton(emailId:string){
+    let en,ep,em,er,eno;
+    for(let i=0;i<this.data.length;i++){
+      if(this.data[i].email==emailId){
+          em = this.data[i].email;
+          ep = this.data[i].password;
+          en = this.data[i].username;
+          er = this.data[i].role;
+          eno = this.data[i].mobileNumber;
+          this.username = en;
+          this.mobileNumber = eno;
+          this.password = ep;
+          this.email=em;
+          const filterArray = this.data.filter((item:any) => item.email !== emailId);
+          this.data = filterArray;
+      }
+    }
   }
-  /*getAllUsers(User){
-    this.httpClientService.getUsers().subscribe(
-      response =>{this.Users = response;}
-     );
+  updatebutton(){
+    this.httpClient.put('http://localhost:8080/admin/userEdit/'+this.email,{
+      email:this.email,
+      password:this.password,
+      username:this.username,
+      mobileNumber:this.mobileNumber,
+      active:1,
+      role:"user"
+    },{observe:"response"}).subscribe(
+      (response) => {
+        if(response.body==true)
+          alert('User updated Succussfully!!')
+        else
+          alert('User not Updated!!')
+      }
+    )
   }
 
-  deleteEmployee(user: User): void {
-    this.httpClientService.deleteUser(user)
-      .subscribe( data => {
-        this.Users = this.Users.filter(u => u !== user);
-      })
-  };*/
+  deletebutton(emailId:String){
+    var flag=null;
+    this.httpClient.get('http://localhost:8080/admin/delete/'+emailId,{observe:"response"})
+     .subscribe(
+       (response) => {
+          if(response.body==true){
+              alert('User deleted Succussfully!!')
+              window.location.reload()
+          }
+          else
+              alert('User not deleted!!')
+       }
+     )
+  }
+  
 
 }

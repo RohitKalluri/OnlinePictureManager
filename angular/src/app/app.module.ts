@@ -10,13 +10,15 @@ import { AdminscreenComponent } from './adminscreen/adminscreen.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
-
+import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component'
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     AdminscreenComponent,
+    HomeComponent,
 
   ],
   imports: [
@@ -26,7 +28,8 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

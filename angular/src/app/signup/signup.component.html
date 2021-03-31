@@ -8,11 +8,11 @@
     </div>
     <form signupForm="ngForm"> 
     <br>
-    Email ID : <input type="email" name="eid" #eid="ngModel" [(ngModel)]="u.emailId" required><br>
-    Password : <input type="password" name="password" #password="ngModel" [(ngModel)]="u.password" required><br>
-    User Name : <input type="text"  name="username" #username="ngModel" [(ngModel)]="u.userName" required><br>
-    Mobile Number : <input type="tel" name="mno" #mno="ngModel" [(ngModel)]="u.mobileNumber" required><br>
-                <input type="submit" class="fadeIn fourth" value="Sign Up">
+    Email ID : <input type="email" name="eid" #eid="ngModel" [(ngModel)]="email" required><br>
+    Password : <input type="password" name="password" #password="ngModel" [(ngModel)]="pass" required><br>
+    User Name : <input type="text"  name="username" #username="ngModel" [(ngModel)]="userName" required><br>
+    Mobile Number : <input type="tel" name="mno" #mno="ngModel" [(ngModel)]="mobileNumber" required><br>
+                <input type="submit" class="fadeIn fourth" value="Sign Up" (click)="postData()">
     </form>
     
   </div>
