@@ -1,6 +1,10 @@
 <mat-toolbar>
     
+<<<<<<< HEAD
     <span>Online Picture Manager</span>
+=======
+    <span style="color: white;">Online Picture</span>
+>>>>>>> 0956b9bb498f7595f1458ffdde8241757d4bbcda
     <span class="example-spacer"></span>
     <div class="navlinks">
     <a ng-href="#">Home</a>
@@ -14,6 +18,7 @@
       <button mat-raised-button color="accent" id="searchbtn" style="width:10%;height:40px;">Search</button>
 </div>
 <div class="row">
+<<<<<<< HEAD
   <div class="column left">
     <table class="table table-stripped">
       <thead>
@@ -48,6 +53,37 @@
               <input matInput name="mobilenumber" placeholder="Enter mobile" [(ngModel)]="mobileNumber" ><br>
               <input matInput name="password" placeholder="Enter password" [(ngModel)]="password" ><br>
               <button  mat-raised-button id="updatebtn" (click)="updatebutton()">Edit</button>
+=======
+      <div class="column left">
+            <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>S No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Options</th>
+              </tr>
+            </thead>
+            <tbody>
+            <!--<tr *ngFor="let user of Users">-->
+                <tr>
+                    <td></td>
+                    <td>{{u.userName}}</td>
+                    <td>{{u.emailId}}</td>
+                    <td><button class="editbtn"><mat-icon> border_color</mat-icon></button>&nbsp;<button class="deletebtn"><mat-icon>delete_outline</mat-icon></button></td>
+                    </tr>
+            </tbody>
+            </table>
+      </div>
+      <div class="column right">
+        <label id="label">Edit Details</label><br>
+            <form>
+              <input matInput placeholder="Enter name"><br>
+              <input matInput placeholder="Enter email"><br>
+              <input matInput placeholder="Enter mobile"><br>
+              <input matInput placeholder="Enter password"><br>
+              <button mat-raised-button id="updatebtn">Search</button>
+>>>>>>> 0956b9bb498f7595f1458ffdde8241757d4bbcda
               <br>
               <br>
             </form>

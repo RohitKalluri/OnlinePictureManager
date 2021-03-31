@@ -10,8 +10,14 @@ import { AdminscreenComponent } from './adminscreen/adminscreen.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+<<<<<<< HEAD
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './home/home.component'
+=======
+import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
+
+>>>>>>> 0956b9bb498f7595f1458ffdde8241757d4bbcda
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +35,12 @@ import { HomeComponent } from './home/home.component'
     MatToolbarModule,
     MatFormFieldModule,
     MatIconModule,
+<<<<<<< HEAD
     HttpClientModule
+=======
+    MatCardModule
+
+>>>>>>> 0956b9bb498f7595f1458ffdde8241757d4bbcda
   ],
   providers: [],
   bootstrap: [AppComponent]
