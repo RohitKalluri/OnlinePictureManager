@@ -10,14 +10,12 @@ import { AdminscreenComponent } from './adminscreen/adminscreen.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
-<<<<<<< HEAD
 import {HttpClientModule} from '@angular/common/http';
-import { HomeComponent } from './home/home.component'
-=======
 import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
+import { UploadImageComponent } from './upload-image/upload-image.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
->>>>>>> 0956b9bb498f7595f1458ffdde8241757d4bbcda
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +23,7 @@ import {MatCardModule} from '@angular/material/card';
     SignupComponent,
     AdminscreenComponent,
     HomeComponent,
+    UploadImageComponent,
 
   ],
   imports: [
@@ -35,12 +34,10 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatFormFieldModule,
     MatIconModule,
-<<<<<<< HEAD
-    HttpClientModule
-=======
-    MatCardModule
+    HttpClientModule,
+    MatCardModule,
+    ReactiveFormsModule
 
->>>>>>> 0956b9bb498f7595f1458ffdde8241757d4bbcda
   ],
   providers: [],
   bootstrap: [AppComponent]
