@@ -10,6 +10,8 @@ import { AdminscreenComponent } from './adminscreen/adminscreen.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import { HomeComponent } from './home/home.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
     LoginComponent,
     SignupComponent,
     AdminscreenComponent,
+    HomeComponent,
 
   ],
   imports: [
@@ -26,7 +29,9 @@ import {MatIconModule} from '@angular/material/icon';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatCardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
