@@ -47,6 +47,7 @@ export class AdminscreenComponent implements OnInit {
     }
   }
   updatebutton(){
+    
     this.httpClient.put('http://localhost:8080/admin/userEdit/'+this.email,{
       email:this.email,
       password:this.password,
