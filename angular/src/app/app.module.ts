@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthguardServiceService } from "./authguard-service.service";
 import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HomeComponent,
     UploadImageComponent,
     ProfileComponent,
+    CommentsComponent,
 
   ],
   imports: [

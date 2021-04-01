@@ -1,0 +1,52 @@
+.box
+{
+display: inline;
+}
+.box-button
+{
+    width: 200;
+}
+table,th,td
+{
+    font-size: 40px;
+    border: 6px solid; 
+   
+
+}
+#id1
+{
+    border: 6px solid; 
+}
+#id2
+{
+    border: 6px solid; 
+}
+#id3
+{
+    border: 6px solid; 
+}
+#id4
+{
+    border: none;
+}
+#id4
+{
+    border: none;
+}
+#id5
+{
+    border: none;
+}
+
+table
+{
+    text-align: center;
+}
+body
+{
+    text-align: center;
+}
+button
+{
+text-align: center;
+}
