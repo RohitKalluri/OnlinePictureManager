@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  name!:String
-  pass!:String
+  name!:string
+  pass!:string
   constructor(private route:Router,private httpClient:HttpClient) { }
 
   ngOnInit(): void {
+    localStorage.setItem('SessionUser',this.name);
   }
 
   public postData(){

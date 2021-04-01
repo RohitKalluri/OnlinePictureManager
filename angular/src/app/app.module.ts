@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AuthguardServiceService } from "./authguard-service.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
