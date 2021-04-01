@@ -16,6 +16,8 @@ import {MatCardModule} from '@angular/material/card';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthguardServiceService } from "./authguard-service.service";
+import { ProfileComponent } from './profile/profile.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { AuthguardServiceService } from "./authguard-service.service";
     AdminscreenComponent,
     HomeComponent,
     UploadImageComponent,
+    ProfileComponent,
 
   ],
   imports: [
@@ -37,7 +40,8 @@ import { AuthguardServiceService } from "./authguard-service.service";
     MatIconModule,
     HttpClientModule,
     MatCardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatGridListModule
 
   ],
   providers: [
