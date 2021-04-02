@@ -57,8 +57,10 @@ export class AdminscreenComponent implements OnInit {
       role:"user"
     },{observe:"response"}).subscribe(
       (response) => {
-        if(response.body==true)
+        if(response.body==true){
           alert('User updated Succussfully!!')
+          window.location.reload()
+        }
         else
           alert('User not Updated!!')
       }
@@ -80,5 +82,8 @@ export class AdminscreenComponent implements OnInit {
      )
   }
   
+  addUserClick(){
+    this.route.navigate(['signup'])
+  }
 
 }

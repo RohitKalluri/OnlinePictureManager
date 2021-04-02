@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,13 +22,16 @@ public class LoginController {
 	 LoginRepository repo;
 	 
 	 @PostMapping("/login")
-	 public boolean checkUser(@RequestBody final LoginModel data)
+	 public boolean checkUser(@RequestBody final LoginModel data,HttpServletResponse response)
 	 {
 		UserModel a=repo.findByUsername(data.getEmail(),data.getPassword());
-		if(!(a.equals(null)))
+		if(a!=null)
 		{	
 			a.setActive(0);
 			repo.save(a);
+//			System.out.println(a.getUsername());
+			Cookie cookie = new Cookie("userdetail", "jagdj");
+		    response.addCookie(cookie);
            return true;		
 		
 		}
