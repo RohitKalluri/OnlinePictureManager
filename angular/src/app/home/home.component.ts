@@ -12,5 +12,14 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  public icon = 'favorite_border'; 
+
+public toggleIcon() {
+    if (this.icon === 'favorite_border') {
+        this.icon = 'favorite';
+    } else {
+        this.icon = 'favorite_border';
+    }
+}
 
 }
