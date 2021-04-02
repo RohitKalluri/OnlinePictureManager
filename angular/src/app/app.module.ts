@@ -15,7 +15,13 @@ import { HomeComponent } from './home/home.component'
 import {MatCardModule} from '@angular/material/card';
 import { TestingComponentComponent } from './testing-component/testing-component.component';
 import { AddImageComponent } from './add-image/add-image.component';
-
+import { UploadImageComponent } from './upload-image/upload-image.component';
+import { AuthguardServiceService } from "./authguard-service.service";
+import { ProfileComponent } from './profile/profile.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { CommentsComponent } from './comments/comments.component';
+import {ScrollingModule } from '@angular/cdk/scrolling'
+import {MatTooltipModule} from '@angular/material/tooltip'
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +31,9 @@ import { AddImageComponent } from './add-image/add-image.component';
     HomeComponent,
     TestingComponentComponent,
     AddImageComponent,
+    UploadImageComponent,
+    ProfileComponent,
+    CommentsComponent,
 
   ],
   imports: [
@@ -37,10 +46,14 @@ import { AddImageComponent } from './add-image/add-image.component';
     MatIconModule,
     HttpClientModule,
     MatCardModule,
-    ReactiveFormsModule
-
+    ReactiveFormsModule,
+    MatGridListModule,
+    ScrollingModule,
+    MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

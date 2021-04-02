@@ -12,9 +12,11 @@ export class AddImageComponent implements OnInit {
   constructor(private httpClient: HttpClient,private route:Router) { }
 
   ngOnInit(): void {
+    this.name=localStorage.getItem('SessionUser');
   }
 
   tag!:any
+  name!:any
   selectedFile!: File;
   url ="https://cdn4.iconfinder.com/data/icons/photos-and-pictures/60/camera_sign_square_copy-512.png";
   formTemplate = new FormGroup(
@@ -44,7 +46,7 @@ export class AddImageComponent implements OnInit {
      // console.log(this.selectedFile)
       //FormData API provides methods and properties to allow us easily prepare form data to be sent with POST HTTP requests.
     const uploadImageData = new FormData();
-    uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
+    uploadImageData.append('imageFile', this.selectedFile, this.name);
   
     //Make a call to the Spring Boot Application to save the image
     this.httpClient.post('http://localhost:8080/image/addImage/'+this.tag, uploadImageData, { observe: 'response' })

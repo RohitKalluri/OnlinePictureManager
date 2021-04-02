@@ -12,7 +12,7 @@ export class SignupComponent implements OnInit {
 
   email!:String
   pass!:String
-  userName!:String
+  userName!:string
   mobileNumber!:String
 
 
@@ -31,8 +31,10 @@ export class SignupComponent implements OnInit {
       role:"user"
     },{ observe: 'response' })
     .subscribe((response) => {
-      if(response.body==true)
+      if(response.body==true){
+        localStorage.setItem('SessionUser',this.userName);
         this.route.navigate(['home'])
+      }
       else
         alert('Invalid Credentials!! ')
     })
