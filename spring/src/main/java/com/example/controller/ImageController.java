@@ -46,11 +46,10 @@ public class ImageController {
 	}
 	
 	@PostMapping("/addImage/{id}")
-	public boolean uplaodImage(@PathVariable (value="id") String tag,@RequestParam("imageFile") MultipartFile file,@CookieValue(value = "userdetail", defaultValue = "NotFound") String username) throws IOException {
+	public boolean uplaodImage(@PathVariable (value="id") String tag,@RequestParam("imageFile") MultipartFile file) throws IOException {
 
 		System.out.println("Original Image Byte Size - " + file.getBytes().length);
-		System.out.println(username);
-		ImageModel img = new ImageModel(username,compressBytes(file.getBytes()),tag);
+		ImageModel img = new ImageModel(file.getOriginalFilename(),compressBytes(file.getBytes()),tag);
 		imageRepository.save(img);
 		return true;
 	}
