@@ -19,7 +19,7 @@ import { AuthguardServiceService } from "./authguard-service.service";
 import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CommentsComponent } from './comments/comments.component';
-
+import {ScrollingModule } from '@angular/cdk/scrolling'
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,8 +43,8 @@ import { CommentsComponent } from './comments/comments.component';
     HttpClientModule,
     MatCardModule,
     ReactiveFormsModule,
-    MatGridListModule
-
+    MatGridListModule,
+    ScrollingModule
   ],
   providers: [
     AuthguardServiceService
