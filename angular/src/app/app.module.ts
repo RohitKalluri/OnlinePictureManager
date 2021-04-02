@@ -20,6 +20,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CommentsComponent } from './comments/comments.component';
 import {ScrollingModule } from '@angular/cdk/scrolling'
+import {MatTooltipModule} from '@angular/material/tooltip'
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import {ScrollingModule } from '@angular/cdk/scrolling'
     MatCardModule,
     ReactiveFormsModule,
     MatGridListModule,
-    ScrollingModule
+    ScrollingModule,
+    MatTooltipModule
   ],
   providers: [
     AuthguardServiceService

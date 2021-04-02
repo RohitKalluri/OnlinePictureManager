@@ -15,7 +15,9 @@ body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
 }
-
+.multiline-tooltip{
+  white-space: pre-line;
+}
 a {
   color: #92badd;
   display: inline-block;

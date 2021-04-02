@@ -14,10 +14,11 @@ import { UploadImageComponent } from './upload-image/upload-image.component';
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'login',component:LoginComponent},
+  {path:'signup1',component:SignupComponent},
   {path:'signup',component:SignupComponent,canActivate:[AuthenticationGuard]},
   {path:'admin',component:AdminscreenComponent,canActivate:[AuthenticationGuard]},
-  {path:'home',component:HomeComponent,canActivate:[AuthenticationGuard]},
-  {path:'profile',component:ProfileComponent,canActivate:[AuthenticationGuard]}
+  {path:'home',component:HomeComponent},
+  {path:'profile',component:ProfileComponent}
 ];
 
 @NgModule({
