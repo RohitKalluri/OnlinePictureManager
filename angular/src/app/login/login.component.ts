@@ -14,23 +14,46 @@ export class LoginComponent implements OnInit {
   pass!:string
   constructor(private route:Router,private httpClient:HttpClient) { }
 
+  username!:any
+  data!:any
   ngOnInit(): void {
-    localStorage.setItem('SessionUser',this.name);
+    localStorage.setItem('SessionUser',"null");
   }
 
   public postData(){
 
-      if(this.name==='admin'&&this.pass==='admin')
+      if(this.name==='admin'&&this.pass==='admin'){
+        localStorage.setItem('SessionUser',"admin");
         this.route.navigate(['admin'])
+      }
+
 
       else{
+
+
+        this.httpClient.post('http://localhost:8080/admin/getUserName',{
+          email:this.name,
+          password:this.pass
+        },{observe:"response"})
+        .subscribe(
+          (response) => {
+            this.data=response.body;
+            this.username=this.data.username
+            localStorage.setItem('SessionUser',this.username);
+          }
+        )
+
+
+
+
         this.httpClient.post('http://localhost:8080/login',{
           email:this.name,
           password:this.pass
         },{ observe: 'response' })
         .subscribe((response) => {
-          if(response.body==true)
+          if(response.body==true){
             this.route.navigate(['home']);
+          }
           else
             alert('Invalid Credentials!! ')
         })

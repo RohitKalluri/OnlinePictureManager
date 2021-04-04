@@ -19,6 +19,10 @@ export class AdminscreenComponent implements OnInit {
   constructor(private route:Router,private httpClient:HttpClient) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('SessionUser')!=="admin"){
+      alert('Please login as admin to access Admin services!!!')
+      this.route.navigate([''])
+    }
     this.httpClient.get('http://localhost:8080/admin/',{observe:'response'})
       .subscribe((response)=>{
         this.data=response.body;

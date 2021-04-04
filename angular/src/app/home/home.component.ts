@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -9,9 +10,13 @@ import { HttpClient, HttpEventType } from '@angular/common/http';
 export class HomeComponent implements OnInit {
   images:String[]=['1','2','3','4'];
   data:any=[];
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,private route:Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('SessionUser')=="null"){
+      alert('Please login/signup to access our website services!!!')
+      this.route.navigate([''])
+    }
     this.httpClient.get('http://localhost:8080/image/',{observe:"response"})
      .subscribe(
        (response) => {
@@ -22,16 +27,28 @@ export class HomeComponent implements OnInit {
         // console.log(this.data)
        }
      )
-     //console.log(localStorage.getItem('SessionUser'));
   }
   public icon = 'favorite_border'; 
-
-public toggleIcon() {
+  public iconId!:any
+  public iconic!:any
+public toggleIcon(imageId:any) {
     if (this.icon === 'favorite_border') {
-        this.icon = 'favorite';
+        this.iconic = 'favorite';
+        this.iconId=imageId;
     } else {
         this.icon = 'favorite_border';
     }
+}
+public commentButtonClick(imageName:any,imageId:any){
+   //this.route.navigate(['comments'])
+   console.log(imageId)
+   localStorage.setItem('imageId',imageId)
+   this.route.navigate(['comments'],{
+     state:{
+       name:localStorage.getItem('SessionUser'),
+       id:imageId
+     }
+   })
 }
 
 }

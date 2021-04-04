@@ -1,19 +1,21 @@
+<input matInput id="comment"  style="border: 1px solid blue;margin:2%;width:50%;height:40px;" [(ngModel)]="comment">
+<button mat-raised-button color="accent" id="addcommentbtn" style="width:10%;height:40px;" (click)="addCommentClicked()">Add Comment</button>
 <div style="align-items: center;">
+    <tr *ngFor="let item of commentsArray">
+      <td>
     <table>
         <th id="id1"style="width: 50px; background-color: black;">
           <i class="fa fa-user fa-25x" aria-hidden="true" style="font-size: 35px; background-color:white;"></i>
         </th>
         <th id="id2"style="width: 200px; background-color: grey;">
-          <h2 style="font-size: 35px;font-family: 'Rancho', cursive;">Username</h2> 
+          <h2 style="font-size: 35px;font-family: 'Rancho', cursive;">{{item.name}}</h2> 
         </th>
-        <th id="id3"> <input type="text" style="font-size: 40px;"></th>
-        <th style="width: 100px; background-color:white; text-align: center;">  <button id="id4"type="reset" style="font-size: 35px;font-family: 'Rancho', cursive;">
-          <i class="fa fa-pencil" aria-hidden="true" style="font-size: 35px; width: 70px;"></i>
-      </button>
-</th>
-    <th  style="width: 100px; background-color:while;"> <button id="id5" type="submit" style="font-size: 35px;font-family: 'Rancho', cursive; text-align: center;">
+        <th id="id3"> {{item.text}}</th>
+    <th  style="width: 100px; background-color:while;"> <button id="id5" type="submit" style="font-size: 35px;font-family: 'Rancho', cursive; text-align: center;" (click)="deleteClicked(item.id,item.name)">
       <i class="fa fa-trash" aria-hidden="true" style="font-size: 35px; width:fit-content"></i>
   </button></th>     
  </table>
+      </td>
+ </tr>
  <br>
 </div>

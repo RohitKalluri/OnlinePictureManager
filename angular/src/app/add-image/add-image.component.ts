@@ -12,6 +12,10 @@ export class AddImageComponent implements OnInit {
   constructor(private httpClient: HttpClient,private route:Router) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('SessionUser')=="null"){
+      alert('Please login/signup to access our website services!!!')
+      this.route.navigate([''])
+    }
     this.name=localStorage.getItem('SessionUser');
   }
 
