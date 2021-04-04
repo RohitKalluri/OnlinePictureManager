@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
       alert('Please login/signup to access our website services!!!')
       this.route.navigate([''])
     }
-    this.httpClient.get('http://localhost:8080/image/',{observe:"response"})
+    this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/image/',{observe:"response"})
      .subscribe(
        (response) => {
          this.data=response.body

@@ -22,7 +22,7 @@ export class CommentsComponent implements OnInit {
     }
     this.name=localStorage.getItem('SessionUser')
     this.id=localStorage.getItem('imageId')
-    this.httpClient.get('http://localhost:8080/comment/',{observe:"response"})
+    this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/comment/',{observe:"response"})
     .subscribe(
       (response) => {
         this.data=response.body;
@@ -41,7 +41,7 @@ export class CommentsComponent implements OnInit {
   
 
   public addCommentClicked(){
-    this.httpClient.post('http://localhost:8080/comment/image/'+this.comment,{id:this.id,name:this.name},{observe:"response"})
+    this.httpClient.post('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/comment/image/'+this.comment,{id:this.id,name:this.name},{observe:"response"})
     .subscribe(
       (response) => {
         if(response.body==true){
@@ -56,7 +56,7 @@ export class CommentsComponent implements OnInit {
 
   public deleteClicked(commentid:any,commentName:any){
       if(commentName==this.name){
-      this.httpClient.get('http://localhost:8080/comment/image/delete/'+commentid,{observe:"response"})
+      this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/comment/image/delete/'+commentid,{observe:"response"})
       .subscribe(
         (response) => {
           if(response.body==true){

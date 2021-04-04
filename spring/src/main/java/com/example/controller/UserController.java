@@ -19,7 +19,7 @@ import com.example.model.UserModel;
 import com.example.repository.UserRepository;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io")
 @RequestMapping("/admin")
 public class UserController {
 

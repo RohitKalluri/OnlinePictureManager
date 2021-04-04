@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
       else{
 
 
-        this.httpClient.post('http://localhost:8080/admin/getUserName',{
+        this.httpClient.post('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/admin/getUserName',{
           email:this.name,
           password:this.pass
         },{observe:"response"})
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
 
 
-        this.httpClient.post('http://localhost:8080/login',{
+        this.httpClient.post('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/login',{
           email:this.name,
           password:this.pass
         },{ observe: 'response' })

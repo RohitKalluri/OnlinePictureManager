@@ -19,7 +19,7 @@ import com.example.model.TemporaryModel;
 import com.example.repository.CommentRepository;
 @RestController
 @RequestMapping("/comment")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://8081-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io")
 public class CommentController {
 
 	
