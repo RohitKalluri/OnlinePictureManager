@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 import java.util.zip.DataFormatException;
 import java.util.zip.Deflater;
 import java.util.zip.Inflater;
@@ -53,6 +54,18 @@ public class ImageController {
 		imageRepository.save(img);
 		return true;
 	}
+	
+	@GetMapping("/profile/{id}")
+	public java.util.List<ImageModel> reteriveprofile(@PathVariable (value="id") String username)
+	{
+		java.util.List<ImageModel> myList=imageRepository.findByUsername(username);
+		for(ImageModel image:myList) {
+			image.setImage(decompressBytes(image.getImage()));
+		}
+		Collections.reverse(myList);
+		return myList;
+	}
+	
 	
 	// compress the image bytes before storing it in the database
 		public static byte[] compressBytes(byte[] data) {

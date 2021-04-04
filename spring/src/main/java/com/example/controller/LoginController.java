@@ -22,17 +22,14 @@ public class LoginController {
 	 LoginRepository repo;
 	 
 	 @PostMapping("/login")
-	 public boolean checkUser(@RequestBody final LoginModel data,HttpServletResponse response)
+	 public boolean checkUser(@RequestBody final LoginModel data)
 	 {
 		UserModel a=repo.findByUsername(data.getEmail(),data.getPassword());
 		if(a!=null)
 		{	
 			a.setActive(0);
 			repo.save(a);
-//			System.out.println(a.getUsername());
-			Cookie cookie = new Cookie("userdetail", "jagdj");
-		    response.addCookie(cookie);
-           return true;		
+			return true;		
 		
 		}
 		else

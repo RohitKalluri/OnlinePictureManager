@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.model.LoginModel;
 import com.example.model.UserModel;
 import com.example.repository.UserRepository;
 
@@ -65,6 +66,11 @@ public class UserController {
        UserModel a=repo.findById(id).orElseThrow();
        repo.delete(a);
        return true;
+	}
+	
+	@PostMapping("/getUserName")
+	public UserModel getUser(@RequestBody LoginModel data) {
+		return repo.findByUsername(data.getEmail(), data.getPassword());
 	}
 	
 }
