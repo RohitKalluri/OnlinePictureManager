@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CommentsComponent implements OnInit {
 
-
+  isVisible=true;
   name!:any
   id!:any
   comment!:any
@@ -19,6 +19,9 @@ export class CommentsComponent implements OnInit {
     if(localStorage.getItem('SessionUser')=="null"){
       alert('Please login/signup to access our website services!!!')
       this.route.navigate([''])
+    }
+    if(localStorage.getItem('SessionUser')=='admin'){
+      this.isVisible=false;
     }
     this.name=localStorage.getItem('SessionUser')
     this.id=localStorage.getItem('imageId')

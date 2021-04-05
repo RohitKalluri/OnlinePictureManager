@@ -35,6 +35,9 @@ mat-toolbar {
   padding: 20px;
   padding: 5px;
 }
+.right form input mat-icon{
+  color:red;
+}
 #updatebtn {
   width: 50%;
   height: 40px;

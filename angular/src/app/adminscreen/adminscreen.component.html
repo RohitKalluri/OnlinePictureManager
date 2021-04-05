@@ -4,6 +4,7 @@
     <span class="example-spacer"></span>
     <div class="navlinks">
     <a ng-href="#" routerLink="/home">Home</a>
+    <a>Comments</a>
     <a ng-href="#" routerLink="">Logout</a>
     </div>
 </mat-toolbar>
@@ -42,9 +43,9 @@
             <form>
 
               <input matInput name="username" placeholder="Enter name" [(ngModel)]="username"><br>
-              <input matInput name="email" placeholder="Enter email" [(ngModel)]="email"><br>
+              <input matInput name="email" placeholder="Enter email" [(ngModel)]="email" disabled><mat-icon>not_interested</mat-icon><br>
               <input matInput name="mobilenumber" placeholder="Enter mobile" [(ngModel)]="mobileNumber" ><br>
-              <input matInput name="password" placeholder="Enter password" [(ngModel)]="password" ><br>
+              <input matInput name="password" placeholder="Enter password" [(ngModel)]="password" disabled> <mat-icon>not_interested</mat-icon><br>
               <button  mat-raised-button id="updatebtn" (click)="updatebutton()">Edit</button>
               <br>
               <br>

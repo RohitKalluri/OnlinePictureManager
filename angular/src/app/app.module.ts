@@ -21,7 +21,8 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { CommentsComponent } from './comments/comments.component';
 import {ScrollingModule } from '@angular/cdk/scrolling'
-import {MatTooltipModule} from '@angular/material/tooltip'
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { AdmincommentComponent } from './admincomment/admincomment.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import {MatTooltipModule} from '@angular/material/tooltip'
     UploadImageComponent,
     ProfileComponent,
     CommentsComponent,
+    AdmincommentComponent,
 
   ],
   imports: [

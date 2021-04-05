@@ -11,11 +11,14 @@ export class HomeComponent implements OnInit {
   images:String[]=['1','2','3','4'];
   data:any=[];
   constructor(private httpClient: HttpClient,private route:Router) { }
-
+  isVisible=true;
   ngOnInit(): void {
     if(localStorage.getItem('SessionUser')=="null"){
       alert('Please login/signup to access our website services!!!')
       this.route.navigate([''])
+    }
+    if(localStorage.getItem('SessionUser')=='admin'){
+      this.isVisible=false;
     }
     this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/image/',{observe:"response"})
      .subscribe(

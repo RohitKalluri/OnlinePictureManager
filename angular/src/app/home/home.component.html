@@ -3,7 +3,8 @@
     <span class="example-spacer"></span>
     <div class="navlinks">
         <a routerLink="/profile">Profile</a>
-        <a routerLink="/addImage">Add Image</a>
+        <a routerLink="/addImage" [style.display]="isVisible ? 'inline' : 'none'">Add Image</a>
+        <a [style.display]="isVisible ? 'none' : 'inline'">dashboard</a>
         <a routerLink="">Logout</a>
         </div>
 </mat-toolbar>
