@@ -1,5 +1,4 @@
 package com.example.controller;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
@@ -25,10 +24,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.example.model.CommentModel;
 import com.example.model.ImageModel;
+import com.example.model.TemporaryModel;
 import com.example.model.UserModel;
+import com.example.repository.CommentRepository;
 import com.example.repository.ImageRepository;
-
 @RestController
 
 @CrossOrigin(origins = "https://8081-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io")
@@ -106,5 +107,32 @@ public class ImageController {
 			}
 			return outputStream.toByteArray();
 		}
+
+		@GetMapping()
+	public java.util.List<ImageModel> allImages1(){
+		java.util.List<ImageModel> myList=imageRepository.findAll();
+		for(ImageModel image:myList) {
+			image.setImage(decompressBytes(image.getImage()));
+		}
+		Collections.reverse(myList);
+		return myList;
+	}
+	
+	@Autowired
+	CommentRepository repo;
+	
+	@PostMapping("/{id}")
+	public boolean addComment(@PathVariable (value="id") String id,@RequestBody TemporaryModel temp)
+	{
+		CommentModel model=new CommentModel(Long.parseLong(temp.getId()),temp.getName(),id);
+		repo.save(model);
+		return true;
+		
+	}
+	
+	@GetMapping("/{id}")
+	public ImageModel getimageById(@PathVariable (value="id") String id) {
+		return imageRepository.findById(Long.parseLong(id)).orElseThrow();
+	}
 	
 }

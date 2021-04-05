@@ -31,17 +31,6 @@ export class HomeComponent implements OnInit {
        }
      )
   }
-  public icon = 'favorite_border'; 
-  public iconId!:any
-  public iconic!:any
-public toggleIcon(imageId:any) {
-    if (this.icon === 'favorite_border') {
-        this.iconic = 'favorite';
-        this.iconId=imageId;
-    } else {
-        this.icon = 'favorite_border';
-    }
-}
 public commentButtonClick(imageName:any,imageId:any){
    //this.route.navigate(['comments'])
    console.log(imageId)

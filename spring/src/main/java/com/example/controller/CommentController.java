@@ -2,9 +2,12 @@ package com.example.controller;
 
 import java.util.Collections;
 import java.util.Optional;
+import java.util.Collections;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,6 +50,13 @@ public class CommentController {
 	
 	@GetMapping("/image/delete/{id}")
 	public boolean deleteComment(@PathVariable(value="id")  String id) {
+		CommentModel model=repo.findByUserId(Long.parseLong(id));
+		repo.delete(model);
+		return true;
+	}
+
+	@DeleteMapping("/delete/{id}")
+	public boolean deleteComment1(@PathVariable(value="id")  String id) {
 		CommentModel model=repo.findByUserId(Long.parseLong(id));
 		repo.delete(model);
 		return true;

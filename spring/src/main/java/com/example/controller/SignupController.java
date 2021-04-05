@@ -19,9 +19,16 @@ public class SignupController {
 	@Autowired
 	signuprepository repo;
 	
-	  @PostMapping(value="/signup")
+	 @PostMapping(value="/signup")
 	    public boolean saveUser(@RequestBody final UserModel user) {
-	      this.repo.save(user);
-	      return true;
-	    }
+		  //new
+		  UserModel a=repo.findBysignup(user.getEmail());
+		  System.out.println(user.getEmail());
+         if(a.getEmail().equals(user.getEmail()))
+        	 return false;
+         else {
+		      repo.save(user);
+		      return true;
+		  }
+	  }
 }

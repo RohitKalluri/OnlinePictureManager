@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { SignupComponent } from './signup/signup.component';
 import {TestingComponentComponent} from './testing-component/testing-component.component'
 import {AddImageComponent} from './add-image/add-image.component'
+import {AdmincommentComponent} from './admincomment/admincomment.component'
 const routes: Routes = [
   {path:"",component:LoginComponent},
   {path:"signup",component:SignupComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'home',component: HomeComponent },
   {path:'addImage',component:AddImageComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'comments',component:CommentsComponent}
+  {path:'comments',component:CommentsComponent},
+  {path:'admincomment',component:AdmincommentComponent}
 ];
 
 @NgModule({

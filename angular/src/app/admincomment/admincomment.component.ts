@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient, HttpEventType } from '@angular/common/http';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-admincomment',
   templateUrl: './admincomment.component.html',
@@ -7,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmincommentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient,private route:Router) { }
   isVisible=true;
   commentsArray:any=[];
   ngOnInit(): void {
     if(localStorage.getItem('SessionUser')=='admin'){
       this.isVisible=false;
     }
+   this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/comment/', { observe: 'response' })
+      .subscribe((response) => {
+        this.commentsArray=response.body
+        console.log(this.commentsArray)
+      }
+      );
+
   }
 
 }

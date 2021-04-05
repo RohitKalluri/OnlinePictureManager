@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class CommentsComponent implements OnInit {
 
   isVisible=true;
+  x=false;
   name!:any
   id!:any
   comment!:any
@@ -20,8 +21,11 @@ export class CommentsComponent implements OnInit {
       alert('Please login/signup to access our website services!!!')
       this.route.navigate([''])
     }
-    if(localStorage.getItem('SessionUser')=='admin'){
+    if(localStorage.getItem('SessionUser')=="admin"){
       this.isVisible=false;
+    }
+    if(localStorage.getItem('SessionUser')=="admin"){
+      this.x=true;
     }
     this.name=localStorage.getItem('SessionUser')
     this.id=localStorage.getItem('imageId')
@@ -56,7 +60,6 @@ export class CommentsComponent implements OnInit {
       }
     )
   }
-
   public deleteClicked(commentid:any,commentName:any){
       if(commentName==this.name){
       this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/comment/image/delete/'+commentid,{observe:"response"})

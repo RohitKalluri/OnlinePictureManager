@@ -2,9 +2,9 @@
     <span>Online Picture Management</span>
     <span class="example-spacer"></span>
     <div class="navlinks">
-        <a routerLink="/profile">Profile</a>
+        <a routerLink="/profile" [style.display]="isVisible ? 'inline' : 'none'">Profile</a>
         <a routerLink="/addImage" [style.display]="isVisible ? 'inline' : 'none'">Add Image</a>
-        <a [style.display]="isVisible ? 'none' : 'inline'">dashboard</a>
+        <a  routerLink="/admin" [style.display]="isVisible ? 'none' : 'inline'">dashboard</a>
         <a routerLink="">Logout</a>
         </div>
 </mat-toolbar>
@@ -20,7 +20,7 @@
     </mat-card-header>
     <img mat-card-image [src]="item.image" alt="Photo of a Shiba Inu">
     <mat-card-actions>
-      <button><mat-icon (click)="toggleIcon(item.imageId)">{{icon}}</mat-icon></button>
+      <button><mat-icon>favorite_border</mat-icon></button>
       <button (click)="commentButtonClick(item.imageName,item.imageId)"><mat-icon >chat_bubble_outline</mat-icon></button>
       <button><mat-icon>screen_share</mat-icon></button>
     </mat-card-actions>
