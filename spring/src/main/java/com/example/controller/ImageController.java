@@ -32,7 +32,7 @@ import com.example.repository.CommentRepository;
 import com.example.repository.ImageRepository;
 @RestController
 
-@CrossOrigin(origins = "https://8081-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io")
+@CrossOrigin(origins = "https://localhost:4200")
 @RequestMapping(path = "/image")
 public class ImageController {
 	@Autowired

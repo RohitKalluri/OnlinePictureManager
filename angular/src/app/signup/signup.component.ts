@@ -22,7 +22,7 @@ export class SignupComponent implements OnInit {
   }
 
   public postData(){
-    this.httpClient.post('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/signup',{
+    this.httpClient.post('https://localhost:8080/signup',{
       email:this.email,
       password:this.pass,
       username:this.userName,

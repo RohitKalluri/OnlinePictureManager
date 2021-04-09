@@ -23,7 +23,7 @@ export class AdminscreenComponent implements OnInit {
       alert('Please login as admin to access Admin services!!!')
       this.route.navigate([''])
     }
-    this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/admin/',{observe:'response'})
+    this.httpClient.get('https://localhost:8080/admin/',{observe:'response'})
       .subscribe((response)=>{
         this.data=response.body;
         }
@@ -52,7 +52,7 @@ export class AdminscreenComponent implements OnInit {
   }
   updatebutton(){
     
-    this.httpClient.put('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/admin/userEdit/'+this.email,{
+    this.httpClient.put('https://localhost:8080/admin/userEdit/'+this.email,{
       email:this.email,
       password:this.password,
       username:this.username,
@@ -73,7 +73,7 @@ export class AdminscreenComponent implements OnInit {
 
   deletebutton(emailId:String){
     var flag=null;
-    this.httpClient.get('https://8080-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io/admin/delete/'+emailId,{observe:"response"})
+    this.httpClient.get('https://localhost:8080/admin/delete/'+emailId,{observe:"response"})
      .subscribe(
        (response) => {
           if(response.body==true){

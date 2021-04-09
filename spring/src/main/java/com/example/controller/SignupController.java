@@ -13,7 +13,7 @@ import com.example.model.UserModel;
 import com.example.repository.signuprepository;
 
 @RestController
-@CrossOrigin(origins = "https://8081-fcffcdaacacafeccbeefdaacddcadfaffe.examlyiopb.examly.io")
+@CrossOrigin(origins = "https://localhost:4200")
 @RequestMapping
 public class SignupController {
 	@Autowired
