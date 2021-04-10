@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     if(localStorage.getItem('SessionUser')=='admin'){
       this.isVisible=false;
     }
-    this.httpClient.get('https://localhost:8080/image/',{observe:"response"})
+    this.httpClient.get('http://localhost:8080/image/',{observe:"response"})
      .subscribe(
        (response) => {
          this.data=response.body

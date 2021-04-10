@@ -53,7 +53,7 @@ export class AddImageComponent implements OnInit {
     uploadImageData.append('imageFile', this.selectedFile, this.name);
   
     //Make a call to the Spring Boot Application to save the image
-    this.httpClient.post('https://localhost:8080/image/addImage/'+this.tag, uploadImageData, { observe: 'response' })
+    this.httpClient.post('http://localhost:8080/image/addImage/'+this.tag, uploadImageData, { observe: 'response' })
       .subscribe((response) => {
         if (response.status === 200) {
           alert('Image uploaded!!')

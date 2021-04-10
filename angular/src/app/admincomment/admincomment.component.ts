@@ -15,10 +15,9 @@ export class AdmincommentComponent implements OnInit {
     if(localStorage.getItem('SessionUser')=='admin'){
       this.isVisible=false;
     }
-   this.httpClient.get('https://localhost:8080/comment/', { observe: 'response' })
+   this.httpClient.get('http://localhost:8080/comment/', { observe: 'response' })
       .subscribe((response) => {
         this.commentsArray=response.body
-        console.log(this.commentsArray)
       }
       );
 

@@ -17,7 +17,7 @@ export class ProfileComponent implements OnInit {
       this.route.navigate([''])
     }
     this.username=localStorage.getItem('SessionUser')
-    this.httpClient.get('https://localhost:8080/image/profile/'+this.username,{observe:"response"})
+    this.httpClient.get('http://localhost:8080/image/profile/'+this.username,{observe:"response"})
      .subscribe(
        (response) => {
           this.data=response.body
